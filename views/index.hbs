@@ -1,0 +1,42 @@
+<h1>{{title}}</h1>
+{{# if success }}
+    <section class="success">
+        <h2>SMS message sent!</h2>
+    </section>
+{{ else }}
+    {{# if errors }}
+        <section class="errors">
+            <ul>
+                {{# each errors }}
+                    <li>{{ this.msg }}</li>
+                {{/each}}
+            </ul>
+        </section>
+    {{/if}}
+
+    <form action="/submit" method="post" enctype="multipart/form-data">
+        <div class="input">
+            <input type="file" name="file"/>
+        </div>
+        <div class="input">
+            <label>ID</label><input type="text" name="id"/>
+        </div>
+        <div class="input">
+            <label>Phone Number To</label>
+            <input type="text" name="tophone"/>
+        </div>
+        <div class="input">
+            <label>Phone Number Source</label>
+            <input type="text" name="fromphone"/>
+        </div>
+        <div class="input">
+            <label>Nexmo API Key</label>
+            <input type="text" name="apiKey"/>
+        </div>
+        <div class="input">
+            <label>Nexmo API Secret</label>
+            <input type="text" name="apiSecret"/>
+        </div>
+        <button type="submit">Upload</button>
+    </form>
+{{/if}}
