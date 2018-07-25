@@ -2,7 +2,7 @@ INSTALLATION & RUNNING:
 // In the root folder run
 npm install
 // Run the server from root
-node app
+npm start
 // Visit http://localhost:8000 to see nodejs app
 
 SETTING UP A NEXMO ACCOUNT:
